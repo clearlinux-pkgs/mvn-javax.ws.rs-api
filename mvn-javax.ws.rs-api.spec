@@ -4,16 +4,20 @@
 #
 Name     : mvn-javax.ws.rs-api
 Version  : 2.0.1
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
 Source0  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
 Source1  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.pom
-Source2  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
-Source3  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
+Source2  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar
+Source3  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.pom
+Source4  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
+Source5  : https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CDDL-1.1 GPL-2.0-only
 Requires: mvn-javax.ws.rs-api-data = %{version}-%{release}
+BuildRequires : apache-maven
+BuildRequires : buildreq-mvn
 
 %description
 No detailed description available
@@ -38,11 +42,17 @@ cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1
 cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.pom
 
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
 
 
 %files
@@ -52,5 +62,7 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
 /usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.pom
+/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.jar
+/usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1.1/javax.ws.rs-api-2.1.1.pom
 /usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar
 /usr/share/java/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.pom
